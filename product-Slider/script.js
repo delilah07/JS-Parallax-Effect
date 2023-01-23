@@ -17,4 +17,47 @@ function windowLoaded() {
       },
     });
   }
+
+  // add to cart an animation
+  const cart = document.querySelector(".header__cart");
+  let cartValue = document.querySelector(".header__cart span");
+  const speedAnimation = 1000;
+
+  document.addEventListener("click", function (e) {
+    const targetElement = e.target;
+    if (targetElement.closest(".product__buy")) {
+      const productSlide = targetElement.closest(".product__slide");
+      const productImage = productSlide.querySelector(".product__picture");
+      const productImageFly = productImage.cloneNode(true);
+
+      const cartPos = {
+        left: cart.getBoundingClientRect().left,
+        top: cart.getBoundingClientRect().top,
+      };
+
+      productImageFly.style.cssText = `
+        position: fixed;
+        left: ${productImageFly.getBoundingClientRect().left}px;
+        top: ${productImage.getBoundingClientRect().top}px;
+        width: ${productImage.innerWidth}px;
+        height: ${productImage.innerHeight}px;
+        transition: all ${speedAnimation}ms;
+      `;
+
+      document.body.append(productImageFly);
+
+      setTimeout(() => {
+        productImageFly.style.left = `${cartPos.left}px`;
+        productImageFly.style.top = `${cartPos.top}px`;
+        productImageFly.style.width = `0px`;
+        productImageFly.style.height = `0px`;
+        productImageFly.style.opacity = `0.5`;
+      }, 0);
+
+      setTimeout(() => {
+        cartValue.innerHTML = ++cartValue.innerHTML;
+        productImageFly.remove();
+      }, speedAnimation);
+    }
+  });
 }
