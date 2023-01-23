@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>ShoesShop</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <ul>
+          <li><a href="#" class="header__logo">SHOESHOP</a></li>
+          <li><a href="#" class="header__cart">Cart (<span>0</span>)</a></li>
+        </ul>
+      </header>
+      <main class="product">
+        <div class="product__slider swiper">
+          <div class="product__wrapper swiper-wrapper">
+            <div class="product__slide swiper-slide">
+              <div class="product__body">
+                <div class="product__content">
+                  <div class="product__image">
+                    <img
+                      src="img/image-01.png"
+                      alt="shoes"
+                      class="product__picture"
+                    />
+                  </div>
+                </div>
+                <h2 class="product__title">
+                  NIKE MAG <br />BACK TO THE FUTURE
+                </h2>
+              </div>
+              <div class="product__details">
+                <div class="product__price">$749</div>
+                <button class="product__buy" type="button">BUY NOW</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer>from "Code Only" Youtube channel</footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
